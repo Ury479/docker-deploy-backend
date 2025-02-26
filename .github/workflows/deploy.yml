@@ -20,9 +20,8 @@ jobs:
 
       - name: Run Maven
         run: |
-          mvn clean package -DskipTests -B
-          mkdir -p target/dependency
-          jar -xf target/*.jar -C target/dependency
+          mvn clean install -DskipTests -B
+          mkdir -p target/dependency && (cd target/dependency; unzip ../*.jar)
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -31,16 +30,16 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to DockerHub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Prepare the docker-compose run
         run: |
-          ls -l target/dependency
+          ls -l
 
-      - name: Build and Push
+      - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: .
