@@ -2,12 +2,12 @@ version: '3.3'
 services:
   frontend:
     image: uryy/234-deploylab-frontend:latest
-    pull_policy: always
+    restart: always
     ports:
       - "8086:80"
 
   backend:
     image: uryy/234-deploylab-backend:latest
-    pull_policy: always
+    restart: always
     ports:
       - "8085:8080"
