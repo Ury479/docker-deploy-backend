@@ -2,7 +2,6 @@ version = 1
 
 [[analyzers]]
 name = "docker"
-enabled = true
 
-[analyzers.config]
-dockerfile_paths = ["docker-deploy-backend/Dockerfile"]
+  [analyzers.meta]
+  dockerfile_paths = ["docker-deploy-backend/Dockerfile"]
