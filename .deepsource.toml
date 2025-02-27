@@ -3,6 +3,5 @@ version = 1
 [[analyzers]]
 name = "docker"
 
-[analyzers.config]
-dockerfile_paths = ["Dockerfile"]
-
+  [analyzers.meta]
+  dockerfile_paths = ["Dockerfile"]
