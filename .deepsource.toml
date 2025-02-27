@@ -4,4 +4,4 @@ version = 1
 name = "docker"
 
   [analyzers.meta]
-  dockerfile_paths = ["/Users/ury/Documents/project/S2T2/se234/lab11/docker-deploy-backend/Dockerfile"]
+  dockerfile_paths = ["docker-deploy-backend/Dockerfile"]
